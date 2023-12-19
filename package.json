@@ -1,0 +1,63 @@
+{
+  "name": "@ghom/complate",
+  "version": "0.0.5-alpha",
+  "description": "Comment based templating engine",
+  "author": "ghom @GhomKrosmonaute",
+  "type": "commonjs",
+  "bin": {
+    "complate": "./bin/run"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "homepage": "https://github.com/GhomKrosmonaute/complate",
+  "bugs": "https://github.com/GhomKrosmonaute/complate/issues",
+  "repository": "GhomKrosmonaute/complate",
+  "files": [
+    "/bin",
+    "/files",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^3",
+    "glob": "^10.3.10",
+    "listr": "^0.14.3",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/listr": "^0.14.9",
+    "@types/node": "^20.10.5",
+    "oclif": "^4",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "oclif": {
+    "bin": "complate",
+    "default": ".",
+    "commands": "./dist/commands"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "prepack": "yarn build",
+    "version": "oclif readme && git add README.md",
+    "format": "prettier --write src package.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "oclif",
+    "typescript",
+    "cli",
+    "templating",
+    "engine",
+    "comment"
+  ]
+}
